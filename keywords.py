@@ -2,7 +2,7 @@ import sys
 from pixivpy3 import AppPixivAPI
 
 username="pixiv username"
-password="pixiv password"
+password="pixiv passowrd"
 
 def get_imageUrls(aapi, keyword, minbook):
     json_result = aapi.search_illust(keyword)
@@ -20,7 +20,7 @@ def get_imageUrls(aapi, keyword, minbook):
                 if illust.page_count == 1 and illust.type != 'ugoira':
                     print(illust.meta_single_page.original_image_url)
                     print('Bookmarks:' + str(illust.total_bookmarks))
-                    with open('url.txt','a+') as f:
+                    with open(keyword + '.txt','a+') as f:
                         f.write(illust.meta_single_page.original_image_url+'\n')
                     pass
                 elif illust.page_count > 1:
@@ -31,7 +31,7 @@ def get_imageUrls(aapi, keyword, minbook):
                     print(image_urls)
                     print('Bookmarks:' + str(illust.total_bookmarks))
                     for url in image_urls:
-                        with open('url.txt','a+') as f:
+                        with open(keyword + '.txt','a+') as f:
                             f.write(url+'\n')
                 else:
                     image_urls = []
