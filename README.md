@@ -14,7 +14,6 @@ python user.py [user ID] #Get works of a user
 python keywords.py [Keyword] [Minimum Bookmarks] #Get search results
 python bookmarks.py #Get my public bookmarks
 python bookmarksp.py #Get my private bookmarks
-
 ```
 All URLs will be put in a file.
 
